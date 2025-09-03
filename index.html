@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Land Registration Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+    .container {
+      background-color: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      max-width: 600px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Land Registration Form</h2>
+    <form action="/submit-registration" method="post" enctype="multipart/form-data">
+      
+      <!-- Owner Info -->
+      <label for="ownerName">Owner Full Name</label>
+      <input type="text" id="ownerName" name="ownerName" required>
+
+      <label for="ownerID">Owner ID (e.g., Aadhar/Passport)</label>
+      <input type="text" id="ownerID" name="ownerID" required>
+
+      <label for="contact">Contact Number</label>
+      <input type="tel" id="contact" name="contact" required>
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" required>
+
+      <!-- Property Details -->
+      <label for="propertyAddress">Property Address</label>
+      <textarea id="propertyAddress" name="propertyAddress" rows="3" required></textarea>
+
+      <label for="area">Land Area (in sq. meters)</label>
+      <input type="number" id="area" name="area" step="0.01" required>
+
+      <label for="landType">Type of Land</label>
+      <select id="landType" name="landType" required>
+        <option value="">--Select--</option>
+        <option value="residential">Residential</option>
+        <option value="commercial">Commercial</option>
+        <option value="agricultural">Agricultural</option>
+        <option value="industrial">Industrial</option>
+      </select>
+
+      <label for="ownershipType">Ownership Type</label>
+      <select id="ownershipType" name="ownershipType" required>
+        <option value="">--Select--</option>
+        <option value="freehold">Freehold</option>
+        <option value="leasehold">Leasehold</option>
+      </select>
+
+      <!-- Document Upload -->
+      <label for="landDocument">Upload Land Document (PDF or Image)</label>
+      <input type="file" id="landDocument" name="landDocument" accept=".pdf, .jpg, .jpeg, .png" required>
+
+      <!-- Submit -->
+      <button type="submit">Submit Registration</button>
+    </form>
+  </div>
+
+</body>
+</html>
